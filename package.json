@@ -1,0 +1,13 @@
+{
+  "name": "slim-bit",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "node": "node src/index"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+    "cheerio-httpcli": "~0.6.9"
+  }
+}
