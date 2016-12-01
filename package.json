@@ -1,13 +1,18 @@
 {
-  "name": "slim-bit",
-  "version": "1.0.0",
-  "license": "MIT",
-  "scripts": {
-    "node": "node src/index"
-  },
-  "devDependencies": {
-  },
-  "dependencies": {
-    "cheerio-httpcli": "~0.6.9"
-  }
+    "name": "slim-bit",
+    "version": "1.0.0",
+    "license": "MIT",
+    "scripts": {
+        "node": "node dist/index",
+        "build": "tsc --outDir dist src/index"
+    },
+    "devDependencies": {
+        "typescript": "^2.0.10",
+        "ts-loader": "^1.2.2",
+        "webpack": "^1.13.3",
+        "webpack-node-externals": "^1.5.4"
+    },
+    "dependencies": {
+        "cheerio-httpcli": "~0.6.9"
+    }
 }
