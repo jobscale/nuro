@@ -1,20 +1,21 @@
 {
-    "name": "slim-bit",
-    "version": "1.0.0",
-    "description": "i am slim bit",
-    "scripts": {
-        "node": "node dist/index",
-        "build": "tsc --outDir dist src/index"
-    },
-    "devDependencies": {
-        "typescript": "^2.0.10",
-        "ts-loader": "^1.2.2",
-        "webpack": "^1.13.3",
-        "webpack-node-externals": "^1.5.4"
-    },
-    "dependencies": {
-        "cheerio-httpcli": "~0.6.9"
-    },
-    "license": "MIT",
-    "author": "jobscale"
+  "name": "slim-bit",
+  "version": "1.0.0",
+  "description": "i am slim bit",
+  "scripts": {
+    "node": "node dist/index",
+    "build": "tsc --outDir dist src/index"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.10",
+    "ts-loader": "^1.2.2",
+    "webpack": "^1.13.3",
+    "webpack-node-externals": "^1.5.4"
+  },
+  "dependencies": {
+    "cheerio-httpcli": "~0.6.9",
+    "sequelize": "~3.27.0"
+  },
+  "license": "MIT",
+  "author": "jobscale"
 }

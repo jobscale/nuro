@@ -1,0 +1,9 @@
+[
+{
+    "tablename": "wether",
+    "columns": {
+        "date": {"type": "STRING", "unique": true, "allowNull": false},
+        "caption": {"type": "TEXT"}
+    }
+}
+]
