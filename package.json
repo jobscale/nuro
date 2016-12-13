@@ -4,7 +4,8 @@
   "description": "i am slim bit",
   "scripts": {
     "node": "node dist/index",
-    "build": "tsc --outDir dist src/index"
+    "build": "node_modules/.bin/tsc --outDir dist src/index",
+    "debug": "node --debug-brk dist/index"
   },
   "devDependencies": {
     "typescript": "^2.0.10",
@@ -14,7 +15,8 @@
   },
   "dependencies": {
     "cheerio-httpcli": "~0.6.9",
-    "sequelize": "~3.27.0"
+    "sequelize": "~3.27.0",
+    "underscore": "^1.8.3"
   },
   "license": "MIT",
   "author": "jobscale"

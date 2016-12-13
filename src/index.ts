@@ -1,4 +1,4 @@
-import {Scraper} from './scraper';
+import {Scraper} from './app/scraper';
 
 (() => {
     var sc = new Scraper;
