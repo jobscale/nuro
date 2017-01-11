@@ -1,7 +1,7 @@
 # example
 
-> git clone https://github.com/jobscale/slim-bit.git
-> cd slim-bit
+> git clone git@gitlab.shall-we-date.com:social/tapjoy-push.git
+> cd tapjoy-push
 
 * setup
 

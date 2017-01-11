@@ -1,7 +1,7 @@
 {
-  "name": "slim-bit",
+  "name": "tapjoy-push",
   "version": "1.0.0",
-  "description": "i am slim bit",
+  "description": "i am tapjoy push",
   "scripts": {
     "node": "node dist/index",
     "build": "node_modules/.bin/tsc --outDir dist src/index",
@@ -19,5 +19,5 @@
     "underscore": "^1.8.3"
   },
   "license": "MIT",
-  "author": "jobscale"
+  "author": "anonymous"
 }
