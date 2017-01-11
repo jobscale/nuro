@@ -2,7 +2,6 @@ declare function require(x: string): any;
 var client = require('cheerio-httpcli');
 var env = require('../../config/env.json');
 var tables = require('../../config/tables.json');
-var Sequelize = require('sequelize');
 var _ = require('underscore');
 
 import {Wether} from '../model/wether';
