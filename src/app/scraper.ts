@@ -2,6 +2,7 @@ var env = require('../../config/env.json');
 var _ = require('underscore');
 
 import {Sonet} from '../model/sonet';
+import {Mailer} from "../service/mailer";
 
 export class Scraper {
 
@@ -11,7 +12,10 @@ export class Scraper {
     render = ($) => {
         var title = $("title").text();
         var body = this.getBody($);
-        console.log('log', title, body.html());
+        (new Mailer).send({
+            subject: title,
+            html: body.html()
+        });
         var data = this.getData($);
         this.store(data);
     };
