@@ -1,7 +1,7 @@
 # example
 
-> git clone git@gitlab.shall-we-date.com:social/tapjoy-push.git
-> cd tapjoy-push
+> git clone git@github.com:jobscale/automation.git
+> cd automation
 
 * setup
 
