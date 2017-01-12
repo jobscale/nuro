@@ -2,42 +2,42 @@ var client = require('cheerio-httpcli');
 var env = require('../../config/env.json');
 var _ = require('underscore');
 
-import {Wether} from '../model/wether';
+import {Sonet} from '../model/sonet';
 
 export class Scraper {
 
-    protected requestUrl = "http://www.tenki.jp/forecast/6/30/6200.html";
+    protected requestUrl = "https://www.so-net.ne.jp/retail/u/userUsage/";
 
     construct() {
     }
 
-    get = () => {
+    render = (session) => {
         client.fetch(this.requestUrl)
         .then((result) => {
             var $:any = result.$;
             var title = $("title").text();
             var body = this.getBody($);
-            console.log(title, body.html());
+console.log(title, body.html());
             var data = this.getData($);
             this.store(data);
         });
     };
 
     getBody = ($) => {
-        return $("div#townLeftOneBox");
+        return $("div.guideSignElem");
     };
 
     getData = ($) => {
         return {
-            date: $(".townTitleArea").first().text(),
-            caption: $("p.wethreDrtalIiconText").first().text()
+            date: $("div.guideSignElem dd").first().text(),
+            caption: $("div.guideSignElem dt").first().text()
         };
     };
 
     store = (data) => {
 
         // Create new instance
-        var model = Wether.build({
+        var model = Sonet.build({
             date: data.date,
             caption: data.caption
         });
