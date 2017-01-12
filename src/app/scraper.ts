@@ -1,7 +1,5 @@
-declare function require(x: string): any;
 var client = require('cheerio-httpcli');
 var env = require('../../config/env.json');
-var tables = require('../../config/tables.json');
 var _ = require('underscore');
 
 import {Wether} from '../model/wether';
@@ -16,7 +14,7 @@ export class Scraper {
     get = () => {
         client.fetch(this.requestUrl)
         .then((result) => {
-            var $ = result.$;
+            var $:any = result.$;
             var title = $("title").text();
             var body = this.getBody($);
             console.log(title, body.html());
