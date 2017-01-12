@@ -1,4 +1,3 @@
-var client = require('cheerio-httpcli');
 var env = require('../../config/env.json');
 var _ = require('underscore');
 
@@ -6,21 +5,15 @@ import {Sonet} from '../model/sonet';
 
 export class Scraper {
 
-    protected requestUrl = "https://www.so-net.ne.jp/retail/u/userUsage/";
-
     construct() {
     }
 
-    render = (session) => {
-        client.fetch(this.requestUrl)
-        .then((result) => {
-            var $:any = result.$;
-            var title = $("title").text();
-            var body = this.getBody($);
-console.log(title, body.html());
-            var data = this.getData($);
-            this.store(data);
-        });
+    render = ($) => {
+        var title = $("title").text();
+        var body = this.getBody($);
+        console.log('log', title, body.html());
+        var data = this.getData($);
+        this.store(data);
     };
 
     getBody = ($) => {

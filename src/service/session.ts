@@ -1,38 +1,27 @@
-var qs = require('qs');
-var request = require('request').defaults({jar: true}); /* cookie jar use */
+var client = require('cheerio-httpcli');
 
 export class Session {
-
-    session:any = {};
 
     constructor() {
     }
 
     login = (account, callback) => {
-        this.session.jar = request.jar();
-        var options = {
-            method: 'POST',
-            url: account.url,
-            headers: account.headers,
-            form: account.data,
-            jar: this.session.jar,
-            json: true
-        };
-        request.post(
-            options,
-            (error, response, body) => {
-                this.session.error = error;
-                if (!error && response.statusCode == 200) {
-                    var parseBody = qs.parse(body);
-                    this.session.response = response;
-                    this.session.body = body;
-                    this.session.parseBody = parseBody;
-                } else {
-                    console.warn(false, error, response, body);
-                }
-                callback(this.session);
-            }
-        );
+        client.fetch(account.url)
+        .then((result) => {
+            var $:any = result.$;
+            return $('form[name=Login]').submit(account.data);
+        })
+        .then((result) => {
+            var $:any = result.$;
+            return $('#menuUseCondition').click({});
+        })
+        .then((result) => {
+            var $:any = result.$;
+            callback($);
+        })
+        .catch((error) => {
+            console.warn(error);
+        });
     };
 
 }
