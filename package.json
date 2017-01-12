@@ -1,7 +1,7 @@
 {
-  "name": "tapjoy-push",
+  "name": "automation",
   "version": "1.0.0",
-  "description": "i am tapjoy push",
+  "description": "i am automation",
   "scripts": {
     "node": "node dist/index",
     "build": "node_modules/.bin/tsc --outDir dist src/index",
@@ -19,5 +19,5 @@
     "underscore": "^1.8.3"
   },
   "license": "MIT",
-  "author": "anonymous"
+  "author": "jobscale"
 }
