@@ -1,10 +1,10 @@
 {
-  "name": "automation",
+  "name": "nuro",
   "version": "1.0.0",
-  "description": "i am automation",
+  "description": "i am nuro",
   "scripts": {
     "node": "node dist/index",
-    "build": "node_modules/.bin/tsc --outDir dist src/index",
+    "build": "$(npm bin)/tsc --outDir dist src/index",
     "debug": "node --debug-brk dist/index"
   },
   "devDependencies": {
